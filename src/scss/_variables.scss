@@ -1,4 +1,5 @@
-@import "../../node_modules/bootstrap-dark-5/dist/css/bootstrap-dark.min.css";
+@import "variables"; /* /src/scss/_variables.scss */
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
 .btn-custom {
   @extend .btn-warning;
