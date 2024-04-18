@@ -1,0 +1,28 @@
+@import "../../node_modules/bootstrap-dark-5/dist/css/bootstrap-dark.min.css";
+
+.btn-custom {
+  @extend .btn-warning;
+
+  &:hover {
+    @extend .btn-danger;
+  }
+}
+
+$blue: #5d95e8;
+$indigo: #916fc8;
+$purple: #5d3b9c;
+$pink: #ab4578;
+$red: #bd7178;
+$orange: #ffa053;
+$yellow: #ffdf7e;
+$green: #4fe49e;
+$teal: #9fffe2;
+$cyan: #8eecff;
+
+// Define a color variable
+$background-color: rgb(22, 96, 120); // You can customize the color
+
+// Apply the background color to the body element
+body {
+  background-color: $background-color;
+}
