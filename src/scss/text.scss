@@ -1,12 +1,5 @@
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
-
-$background-color: rgb(51, 60, 62);
-
-body {
-  background-color: $background-color;
-}
-
 $h1-color: rgba(148, 219, 255, 1);
 h1 {
   color: $h1-color;
