@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,10 +14,11 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./dist/css/index.css" />
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="src/js/app.js"></script>
-    <title>Gimmi Bid N´Sell</title>
+
+    <link rel="stylesheet" href="../dist/css/index.css" />
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../src/js/app.js"></script>
+    <title>Gimmi Register</title>
   </head>
   <body>
     <header>
@@ -34,6 +35,7 @@
                 </div>
               </a>
             </div>
+
             <button
               class="navbar-toggler"
               type="button"
@@ -72,22 +74,75 @@
       </div>
     </header>
     <main>
-      <div class="container mt-5">
-        <div class="row justify-content-center">
-          <div class="col-md-6">
-            <form class="d-flex">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-primary" type="submit">
-                Search
-              </button>
-            </form>
-          </div>
-        </div>
+      <div class="container container col-md-6 col-lg-6">
+        <section class="container">
+          <form id="registerForm">
+            <h1 class="secondary-headline">Register</h1>
+            <div id="message"></div>
+            <fieldset>
+              <legend>Fill in your details to register</legend>
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  aria-describedby="nameHelp"
+                  required
+                  value="my name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  aria-describedby="emailHelp"
+                  pattern="^[^@]+@(stud\.|)(noroff\.no)$"
+                  title="Please provide a noroff.no or stud.noroff.no email address"
+                  required
+                  value="email@stud.noroff.no"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                  required
+                  minlength="8"
+                  value="11111111111"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="bio" class="form-label">Bio</label>
+                <textarea
+                  class="form-control"
+                  id="bio"
+                  name="bio"
+                  rows="3"
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="avatarUrl" class="form-label">Avatar URL</label>
+                <input
+                  type="url"
+                  class="form-control"
+                  id="avatarUrl"
+                  name="avatarUrl"
+                  aria-describedby="avatarUrlHelp"
+                />
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </fieldset>
+          </form>
+        </section>
       </div>
     </main>
     <footer>

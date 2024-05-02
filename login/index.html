@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,10 +14,11 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./dist/css/index.css" />
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="src/js/app.js"></script>
-    <title>Gimmi Bid N´Sell</title>
+
+    <link rel="stylesheet" href="../dist/css/index.css" />
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../src/js/app.js"></script>
+    <title>Gimmi Login</title>
   </head>
   <body>
     <header>
@@ -34,6 +35,7 @@
                 </div>
               </a>
             </div>
+
             <button
               class="navbar-toggler"
               type="button"
@@ -72,20 +74,61 @@
       </div>
     </header>
     <main>
-      <div class="container mt-5">
-        <div class="row justify-content-center">
-          <div class="col-md-6">
-            <form class="d-flex">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-primary" type="submit">
-                Search
-              </button>
-            </form>
+      <div>
+        <div class="container col-md-6 col-l-6">
+          <div class="right-column">
+            <div class="section-text">
+              <div class="top">
+                <b class="secondary-headline">Log In</b>
+              </div>
+            </div>
+            <div class="form-2-fields-checkbox-b">
+              <div class="text-field">
+                <div class="label-and-field">
+                  <div class="label">Email Address</div>
+                  <div class="field">
+                    <div class="text">Placeholder</div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-field1">
+                <div class="label-and-field">
+                  <div class="label">Password</div>
+                  <div class="field1">
+                    <div class="text">Placeholder</div>
+                    <img
+                      class="icon-jam-icons-outline-l"
+                      alt=""
+                      src="icon / jam-icons / outline & logos / eye.svg"
+                    />
+                  </div>
+                </div>
+                <div class="description">
+                  It must be a combination of minimum 8 letters, numbers, and
+                  symbols.
+                </div>
+              </div>
+              <div class="group">
+                <div class="controls-with-label">
+                  <div class="controls">
+                    <div class="union-wrapper">
+                      <img class="union-icon" alt="" src="Union.svg" />
+                    </div>
+                  </div>
+                  <div class="label-name">Remember me</div>
+                </div>
+                <div class="forgot-password">Forgot Password?</div>
+              </div>
+              <div class="button" id="buttonContainer">
+                <div class="text-container">
+                  <div class="button-text">Log In</div>
+                </div>
+              </div>
+            </div>
+            <div class="sep"></div>
+            <div class="no-account-yet" id="noAccountYet">
+              No account yet? Sign Up
+            </div>
           </div>
         </div>
       </div>
