@@ -11852,6 +11852,81 @@ body {
   background-attachment: fixed;
 }
 
+h1, .h1 {
+  color: #94dbff;
+  font-size: 56px;
+  position: relative;
+  font-size: 42px;
+  line-height: 110%;
+  font-family: Roboto;
+  text-align: left;
+}
+
+.form-label {
+  color: #94dbff;
+  font-size: 18px;
+  position: relative;
+  font-size: 18px;
+  line-height: 110%;
+  font-family: Roboto;
+  text-align: left;
+}
+
+.form-control {
+  background-color: #bdbdbd;
+  border: 1px solid #c1c7cd;
+  box-sizing: border-box;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 16px;
+  font-size: 16px;
+  color: #697077;
+}
+
+.btn-primary {
+  background-color: rgba(15, 99, 254, 0);
+  border: 2px solid #94dbff;
+  color: #94dbff;
+}
+.btn-primary:hover {
+  background-color: #94dbff;
+  border: 2px solid #94dbff;
+}
+
+.btn-outline-primary {
+  background-color: rgba(15, 99, 254, 0);
+  border: 2px solid #94dbff;
+  color: #94dbff;
+}
+.btn-outline-primary:hover {
+  background-color: #94dbff;
+  border: 2px solid #94dbff;
+}
+
+.navbar-toggler {
+  background-color: rgba(15, 99, 254, 0);
+  border: 2px solid #94dbff;
+  color: #94dbff;
+}
+.navbar-toggler:hover {
+  background-color: #94dbff;
+  border: 2px solid #94dbff;
+}
+
+.navbar-toggler-icon {
+  width: 1em;
+  height: 1em;
+  color: #94dbff;
+}
+
+.parent-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .bg-body-tertiary {
   --bs-bg-opacity: 1;
   background-color: rgba(116, 55, 55, 0) !important;
@@ -12350,6 +12425,7 @@ body {
   align-items: center;
   justify-content: flex-end;
   gap: 16px;
+  cursor: pointer;
 }
 
 .desktop-s-logo-none-copy {

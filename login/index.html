@@ -25,9 +25,9 @@
       <div class="container">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-fluid">
-            <div href="../index.html" class="title-parent">
+            <div class="title-parent">
               <a href="../index.html">
-                <b class="title">Gimmi</b>
+                <h1 class="title">Gimmi</h1>
                 <div class="subtitle">
                   <span>Bid </span>
                   <span class="n">N</span>
@@ -74,63 +74,41 @@
       </div>
     </header>
     <main>
-      <div>
-        <div class="container col-md-6 col-l-6">
-          <div class="right-column">
-            <div class="section-text">
-              <div class="top">
-                <b class="secondary-headline">Log In</b>
+      <div class="container container col-md-6 col-lg-6">
+        <section class="container">
+          <form id="loginForm">
+            <h1 class="secondary-headline">Login</h1>
+            <div id="message"></div>
+            <fieldset>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  aria-describedby="emailHelp"
+                  pattern="^[^@]+@(stud\.|)(noroff\.no)$"
+                  title="Please provide a noroff.no or stud.noroff.no email address"
+                  required
+                />
               </div>
-            </div>
-            <div class="form-2-fields-checkbox-b">
-              <div class="text-field">
-                <div class="label-and-field">
-                  <div class="label">Email Address</div>
-                  <div class="field">
-                    <div class="text">Placeholder</div>
-                  </div>
-                </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                  required
+                  minlength="8"
+                />
               </div>
-              <div class="text-field1">
-                <div class="label-and-field">
-                  <div class="label">Password</div>
-                  <div class="field1">
-                    <div class="text">Placeholder</div>
-                    <img
-                      class="icon-jam-icons-outline-l"
-                      alt=""
-                      src="icon / jam-icons / outline & logos / eye.svg"
-                    />
-                  </div>
-                </div>
-                <div class="description">
-                  It must be a combination of minimum 8 letters, numbers, and
-                  symbols.
-                </div>
-              </div>
-              <div class="group">
-                <div class="controls-with-label">
-                  <div class="controls">
-                    <div class="union-wrapper">
-                      <img class="union-icon" alt="" src="Union.svg" />
-                    </div>
-                  </div>
-                  <div class="label-name">Remember me</div>
-                </div>
-                <div class="forgot-password">Forgot Password?</div>
-              </div>
-              <div class="button" id="buttonContainer">
-                <div class="text-container">
-                  <div class="button-text">Log In</div>
-                </div>
-              </div>
-            </div>
-            <div class="sep"></div>
-            <div class="no-account-yet" id="noAccountYet">
-              No account yet? Sign Up
-            </div>
-          </div>
-        </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </fieldset>
+          </form>
+        </section>
       </div>
     </main>
     <footer>
@@ -139,31 +117,24 @@
           CompanyName @ 202X. All rights reserved.
         </div>
         <div class="social-icons">
-          <img
-            class="icon-jam-icons-outline-l"
-            alt=""
-            src="icon / jam-icons / outline & logos / youtube.svg"
-          />
-          <img
-            class="icon-jam-icons-outline-l"
-            alt=""
-            src="icon / jam-icons / outline & logos / facebook.svg"
-          />
-          <img
-            class="icon-jam-icons-outline-l"
-            alt=""
-            src="icon / jam-icons / outline & logos / twitter.svg"
-          />
-          <img
-            class="icon-jam-icons-outline-l"
-            alt=""
-            src="icon / jam-icons / outline & logos / instagram.svg"
-          />
-          <img
-            class="icon-jam-icons-outline-l"
-            alt=""
-            src="icon / jam-icons / outline & logos / linkedin.svg"
-          />
+          <a
+            href="https://www.linkedin.com/your-linkedin-profile"
+            target="_blank"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://twitter.com/your-twitter-profile" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/your-instagram-profile"
+            target="_blank"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://github.com/your-github-profile" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
         </div>
       </div>
     </footer>

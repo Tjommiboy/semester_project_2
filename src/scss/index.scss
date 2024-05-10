@@ -1,6 +1,7 @@
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
+$gimmi-color: #94dbff;
 // Define your custom background color
 $background-color: rgb(36, 42, 43);
 
@@ -11,6 +12,76 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+h1 {
+  color: $gimmi-color;
+  font-size: 56px;
+  position: relative;
+  font-size: 42px;
+  line-height: 110%;
+  font-family: Roboto;
+
+  text-align: left;
+}
+
+.form-label {
+  color: $gimmi-color;
+  font-size: 18px;
+  position: relative;
+  font-size: 18px;
+  line-height: 110%;
+  font-family: Roboto;
+
+  text-align: left;
+}
+.form-control {
+  background-color: #bdbdbd;
+  border: 1px solid #c1c7cd;
+  box-sizing: border-box;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 16px;
+  font-size: 16px;
+  color: #697077;
+}
+.btn-primary {
+  background-color: #0f63fe00;
+  border: 2px solid $gimmi-color;
+  color: $gimmi-color;
+  &:hover {
+    background-color: $gimmi-color; // Background color on hover
+    border: 2px solid $gimmi-color;
+  }
+}
+.btn-outline-primary {
+  background-color: #0f63fe00;
+  border: 2px solid $gimmi-color;
+  color: $gimmi-color;
+  &:hover {
+    background-color: $gimmi-color; // Background color on hover
+    border: 2px solid $gimmi-color;
+  }
+}
+.navbar-toggler {
+  background-color: #0f63fe00;
+  border: 2px solid $gimmi-color;
+  color: $gimmi-color;
+  &:hover {
+    background-color: $gimmi-color; // Background color on hover
+    border: 2px solid $gimmi-color;
+  }
+}
+.navbar-toggler-icon {
+  width: 1em;
+  height: 1em;
+  color: $gimmi-color;
+}
+.parent-container {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .bg-body-tertiary {
@@ -462,6 +533,7 @@ body {
   align-items: center;
   justify-content: flex-end;
   gap: 16px;
+  cursor: pointer;
 }
 .desktop-s-logo-none-copy {
   width: 100%;
