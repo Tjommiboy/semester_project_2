@@ -11854,12 +11854,15 @@ body {
 
 h1, .h1 {
   color: #94dbff;
-  font-size: 56px;
   position: relative;
   font-size: 42px;
   line-height: 110%;
   font-family: Roboto;
   text-align: left;
+}
+
+h2, .h2 {
+  color: #94dbff;
 }
 
 .form-label {
@@ -11873,8 +11876,8 @@ h1, .h1 {
 }
 
 .form-control {
-  background-color: #bdbdbd;
-  border: 1px solid #c1c7cd;
+  background-color: rgba(148, 219, 255, 0.1450980392);
+  border: 1px solid #94dbff;
   box-sizing: border-box;
   height: 48px;
   display: flex;
@@ -11883,7 +11886,7 @@ h1, .h1 {
   justify-content: flex-start;
   padding: 12px 16px;
   font-size: 16px;
-  color: #697077;
+  color: #94dbff;
 }
 
 .btn-primary {
@@ -11904,6 +11907,10 @@ h1, .h1 {
 .btn-outline-primary:hover {
   background-color: #94dbff;
   border: 2px solid #94dbff;
+}
+
+.navbar {
+  flex-wrap: nowrap;
 }
 
 .navbar-toggler {
@@ -11948,6 +11955,10 @@ h1, .h1 {
   font-family: Roboto;
   color: #94dbff;
   text-align: left;
+}
+
+.Tjommiboy-2024 {
+  color: #94dbff;
 }
 
 .secondary-headline {
@@ -12375,6 +12386,9 @@ h1, .h1 {
 .title {
   position: relative;
   line-height: 110%;
+  font-family: Roboto;
+  font-size: 56px;
+  text-decoration: none;
 }
 
 .n {
@@ -12387,7 +12401,7 @@ h1, .h1 {
   line-height: 141%;
   font-family: "RocknRoll One";
   text-align: center;
-  color: #21272a;
+  color: #94dbff;
 }
 
 .title-parent {

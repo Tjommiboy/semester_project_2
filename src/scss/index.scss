@@ -3,6 +3,7 @@
 
 $gimmi-color: #94dbff;
 // Define your custom background color
+
 $background-color: rgb(36, 42, 43);
 
 // Apply the custom background color to the body
@@ -15,7 +16,7 @@ body {
 }
 h1 {
   color: $gimmi-color;
-  font-size: 56px;
+
   position: relative;
   font-size: 42px;
   line-height: 110%;
@@ -24,6 +25,9 @@ h1 {
   text-align: left;
 }
 
+h2 {
+  color: $gimmi-color;
+}
 .form-label {
   color: $gimmi-color;
   font-size: 18px;
@@ -35,8 +39,8 @@ h1 {
   text-align: left;
 }
 .form-control {
-  background-color: #bdbdbd;
-  border: 1px solid #c1c7cd;
+  background-color: #94dbff25;
+  border: 1px solid $gimmi-color;
   box-sizing: border-box;
   height: 48px;
   display: flex;
@@ -45,7 +49,7 @@ h1 {
   justify-content: flex-start;
   padding: 12px 16px;
   font-size: 16px;
-  color: #697077;
+  color: $gimmi-color;
 }
 .btn-primary {
   background-color: #0f63fe00;
@@ -64,6 +68,9 @@ h1 {
     background-color: $gimmi-color; // Background color on hover
     border: 2px solid $gimmi-color;
   }
+}
+.navbar {
+  flex-wrap: nowrap;
 }
 .navbar-toggler {
   background-color: #0f63fe00;
@@ -104,6 +111,10 @@ h1 {
   font-family: Roboto;
   color: #94dbff;
   text-align: left;
+}
+
+.Tjommiboy-2024 {
+  color: $gimmi-color;
 }
 
 //-----------------Register---------------
@@ -489,6 +500,9 @@ h1 {
 .title {
   position: relative;
   line-height: 110%;
+  font-family: Roboto;
+  font-size: 56px;
+  text-decoration: none;
 }
 .n {
   color: #78d2ff;
@@ -499,7 +513,7 @@ h1 {
   line-height: 141%;
   font-family: "RocknRoll One";
   text-align: center;
-  color: #21272a;
+  color: $gimmi-color;
 }
 .title-parent {
   position: relative;

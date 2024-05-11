@@ -1,4 +1,4 @@
-import { loginUser } from "../../api/auth/register.js";
+import { loginUser } from "../../api/auth/login.js";
 import { displayMessage } from "../../ui/auth/posts/common/displayMessage.js";
 
 export function loginHandler() {
@@ -11,22 +11,14 @@ export function loginHandler() {
 
 async function submitForm(event) {
   event.preventDefault();
+
+  console.log("Form submitted. Event:", event);
+
   const form = event.target;
   const formData = new FormData(form);
   const data = Object.fromEntries(formData);
 
-  if (data.bio.trim() === "") {
-    delete data.bio;
-  }
-  if (data.avatarUrl.trim() === "") {
-    delete data.avatarUrl;
-  } else {
-    data.avatar = {
-      url: data.avatarUrl,
-      alt: `${data.name}'s avatar`,
-    };
-    delete data.avatarUrl;
-  }
+  console.log("Form data:", data);
 
   const container = document.querySelector("#message");
 
@@ -34,12 +26,11 @@ async function submitForm(event) {
   const fieldset = document.querySelector("fieldset");
   try {
     fieldset.disabled = true;
+
+    console.log("Attempting login with data:", data);
+
     await loginUser(data);
-    displayMessage(
-      "#message",
-      "success",
-      "Successfully Registered. Please <a href='/login/index.html'>login</a>",
-    );
+    displayMessage("#message", "success", "Successfully logged in!");
     form.reset();
   } catch (error) {
     displayMessage(container, "warning", error.message);
