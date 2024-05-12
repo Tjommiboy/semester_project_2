@@ -28,6 +28,11 @@ h1 {
 h2 {
   color: $gimmi-color;
 }
+.alert-success {
+  background-color: #5cbae958;
+  border: 2px solid $gimmi-color;
+  color: $gimmi-color;
+}
 .form-label {
   color: $gimmi-color;
   font-size: 18px;
@@ -49,6 +54,18 @@ h2 {
   justify-content: flex-start;
   padding: 12px 16px;
   font-size: 16px;
+  color: $gimmi-color;
+}
+
+/* Focus state */
+.form-control:focus {
+  background-color: #94dbff25; /* Same background color as default state */
+  color: $gimmi-color;
+}
+
+/* Active state */
+.form-control:active {
+  background-color: #94dbff25; /* Same background color as default state */
   color: $gimmi-color;
 }
 .btn-primary {

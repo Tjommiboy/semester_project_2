@@ -11865,6 +11865,12 @@ h2, .h2 {
   color: #94dbff;
 }
 
+.alert-success {
+  background-color: rgba(92, 186, 233, 0.3450980392);
+  border: 2px solid #94dbff;
+  color: #94dbff;
+}
+
 .form-label {
   color: #94dbff;
   font-size: 18px;
@@ -11886,6 +11892,18 @@ h2, .h2 {
   justify-content: flex-start;
   padding: 12px 16px;
   font-size: 16px;
+  color: #94dbff;
+}
+
+/* Focus state */
+.form-control:focus {
+  background-color: rgba(148, 219, 255, 0.1450980392); /* Same background color as default state */
+  color: #94dbff;
+}
+
+/* Active state */
+.form-control:active {
+  background-color: rgba(148, 219, 255, 0.1450980392); /* Same background color as default state */
   color: #94dbff;
 }
 
