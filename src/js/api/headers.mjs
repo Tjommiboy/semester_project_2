@@ -1,16 +1,21 @@
-import * as storage from "../storage/index.js";
+import { load } from "../storage/load.js";
+import { API_KEY } from "./constants.js";
 
-export const headers = (contentType) => {
-  const token = storage.load("token");
-  const headers = {};
+export function headers(hasBody = false) {
+  const headers = new Headers();
 
-  if (contentType) {
-    headers["Content-Type"] = contentType;
-  }
+  const token = load("token");
 
   if (token) {
-    headers.Authorization = `Bearer ${token}`;
+    headers.append("Authorization", `Bearer ${token}`);
+  }
+
+  if (API_KEY) {
+    headers.append("X-Noroff-API-Key", API_KEY);
+  }
+  if (hasBody) {
+    headers.append("Content-Type", "application/json");
   }
 
   return headers;
-};
+}

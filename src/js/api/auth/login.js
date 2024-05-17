@@ -3,15 +3,14 @@ import { API_AUTH } from "../constants.js";
 import { API_LOGIN } from "../constants.js";
 
 import * as storage from "../../storage/index.js";
+import { headers } from "../headers.mjs";
 
 export async function loginUser(user) {
   const url = API_BASE + API_AUTH + API_LOGIN;
 
   const options = {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
+    headers: headers(true),
     body: JSON.stringify(user),
   };
 

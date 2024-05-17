@@ -1,11 +1,11 @@
 {
   "folders": [
-	{
-		"path": "../.."
-	}
-],
+    {
+      "path": "../..",
+    },
+  ],
   "settings": {
     "liveServer.settings.multiRootWorkspaceName": "semester_project_2",
-    "liveServer.settings.port": 5501
-  }
+    "liveServer.settings.port": 5501,
+  },
 }

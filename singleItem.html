@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../dist/css/index.css" />
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="../src/js/app.js"></script>
-    <title>Gimmi Login</title>
+    <title>Gimmi Register</title>
   </head>
   <body>
     <header>
@@ -82,67 +82,44 @@
       </div>
     </header>
     <main>
-      <div class="container container col-md-6 col-lg-6">
-        <section class="container">
-          <form id="loginForm">
-            <h2 class="secondary-headline">Login</h2>
-            <div id="message"></div>
-            <fieldset>
-              <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  name="email"
-                  aria-describedby="emailHelp"
-                  pattern="^[^@]+@(stud\.|)(noroff\.no)$"
-                  title="Please provide a noroff.no or stud.noroff.no email address"
-                  required
-                  autocomplete="current-password"
-                />
-              </div>
-              <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="password"
-                  name="password"
-                  required
-                  minlength="8"
-                  autocomplete="current-password"
-                />
-              </div>
-
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </fieldset>
-          </form>
-        </section>
+      <div class="container mt-5">
+        <div class="row justify-content-center mb-4">
+          <div class="col-md-6">
+            <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+        <div class="singleItem"></div>
       </div>
     </main>
-    <footer>
+
+    <footer class="footer position-sticky bottom-0">
       <div class="desktop-s-logo-none-copy">
-        <div class="Tjommiboy-2024">Tjommiboy @ 2024. All rights reserved.</div>
-        <div class="social-icons">
-          <a
-            href="https://www.linkedin.com/your-linkedin-profile"
-            target="_blank"
-          >
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://twitter.com/your-twitter-profile" target="_blank">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a
-            href="https://www.instagram.com/your-instagram-profile"
-            target="_blank"
-          >
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://github.com/your-github-profile" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
+        <div class="container">
+          <div class="Tjommiboy-2024">
+            Tjommiboy @ 2024. All rights reserved.
+          </div>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://github.com" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
