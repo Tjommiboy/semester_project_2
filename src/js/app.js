@@ -4,6 +4,7 @@ import { profileButton } from "./events/profile.js";
 import { registerHandler } from "./events/auth/registerHandler.js";
 import { loginHandler } from "./events/auth/loginHandler.js";
 import { getListingsAndDisplay } from "./api/auth/getListings.js";
+import { fetchSingleItem } from "./ui/singleItem.js";
 
 function router() {
   const pathname = window.location.pathname;
@@ -37,6 +38,7 @@ function router() {
       break;
     case "/singleItem/index.html":
       console.log("singleItem");
+      fetchSingleItem();
       loginButton("/login/index.html");
       registerButton("/register/index.html");
       profileButton("/profile/index.html");
