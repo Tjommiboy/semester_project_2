@@ -16,10 +16,14 @@
     />
 
     <link rel="stylesheet" href="../dist/css/index.css" />
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="../src/js/app.js"></script>
+    <script
+      defer
+      src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+    ></script>
+    <script defer type="module" src="../src/js/app.js"></script>
     <title>Gimmi Login</title>
   </head>
+
   <body>
     <header>
       <div class="container">
@@ -48,14 +52,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                  <button
+                <li id="loginButton" class="nav-item">
+                  <a
+                    href="../login/index.html"
                     id="loginButton"
                     type="button"
                     class="btn btn-primary me-2 mb-1"
                   >
                     Login
-                  </button>
+                  </a>
                 </li>
                 <li class="nav-item">
                   <button
