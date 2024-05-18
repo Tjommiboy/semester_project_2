@@ -1,8 +1,7 @@
 import { API_BASE } from "../constants.js";
-
 import { headers } from "../headers.mjs";
 
-export async function getListingsAndDisplay(limit = 8, offset = 0) {
+export default async function getListingsAndDisplay(limit = 8, offset = 0) {
   console.log(`Fetching listings with limit=${limit} and offset=${offset}`);
   try {
     const response = await fetch(
@@ -84,7 +83,7 @@ export async function getListingsAndDisplay(limit = 8, offset = 0) {
       cardDiv.appendChild(cardBodyDiv);
 
       cardDiv.addEventListener("click", function () {
-        window.location.href = "singleItem.html?id=" + item.id;
+        window.location.href = "/singleItem/index.html?id=" + item.id;
       });
 
       container.appendChild(cardDiv);
@@ -94,85 +93,85 @@ export async function getListingsAndDisplay(limit = 8, offset = 0) {
   }
 }
 
-const limit = 8;
-let currentPage = 1;
-const totalPages = 111;
-const maxVisiblePages = 4;
+// const limit = 8;
+// let currentPage = 1;
+// const totalPages = 111;
+// const maxVisiblePages = 4;
 
-async function fetchListings(page) {
-  const offset = (page - 1) * limit;
-  await getListingsAndDisplay(limit, offset);
-}
+// async function fetchListings(page) {
+//   const offset = (page - 1) * limit;
+//   await getListingsAndDisplay(limit, offset);
+// }
 
-function createPagination() {
-  const pagination = document.getElementById("pagination");
-  pagination.innerHTML = "";
+// function createPagination() {
+//   const pagination = document.getElementById("pagination");
+//   pagination.innerHTML = "";
 
-  // Previous Button
-  const prevItem = document.createElement("li");
-  prevItem.classList.add("page-item");
-  if (currentPage === 1) {
-    prevItem.classList.add("disabled");
-  }
-  const prevLink = document.createElement("a");
-  prevLink.classList.add("page-link");
-  prevLink.href = "#";
-  prevLink.innerText = "Previous";
-  prevLink.addEventListener("click", (event) => {
-    event.preventDefault();
-    if (currentPage > 1) {
-      currentPage--;
-      fetchListings(currentPage).then(createPagination);
-    }
-  });
-  prevItem.appendChild(prevLink);
-  pagination.appendChild(prevItem);
+//   // Previous Button
+//   const prevItem = document.createElement("li");
+//   prevItem.classList.add("page-item");
+//   if (currentPage === 1) {
+//     prevItem.classList.add("disabled");
+//   }
+//   const prevLink = document.createElement("a");
+//   prevLink.classList.add("page-link");
+//   prevLink.href = "#";
+//   prevLink.innerText = "Previous";
+//   prevLink.addEventListener("click", (event) => {
+//     event.preventDefault();
+//     if (currentPage > 1) {
+//       currentPage--;
+//       fetchListings(currentPage).then(createPagination);
+//     }
+//   });
+//   prevItem.appendChild(prevLink);
+//   pagination.appendChild(prevItem);
 
-  let startPage = Math.max(currentPage - Math.floor(maxVisiblePages / 2), 1);
-  let endPage = startPage + maxVisiblePages - 1;
+//   let startPage = Math.max(currentPage - Math.floor(maxVisiblePages / 2), 1);
+//   let endPage = startPage + maxVisiblePages - 1;
 
-  if (endPage > totalPages) {
-    endPage = totalPages;
-    startPage = Math.max(endPage - maxVisiblePages + 1, 1);
-  }
+//   if (endPage > totalPages) {
+//     endPage = totalPages;
+//     startPage = Math.max(endPage - maxVisiblePages + 1, 1);
+//   }
 
-  for (let i = startPage; i <= endPage; i++) {
-    const pageItem = document.createElement("li");
-    pageItem.classList.add("page-item");
-    if (i === currentPage) {
-      pageItem.classList.add("active");
-    }
-    const pageLink = document.createElement("a");
-    pageLink.classList.add("page-link");
-    pageLink.href = "#";
-    pageLink.innerText = i;
-    pageLink.addEventListener("click", (event) => {
-      event.preventDefault();
-      currentPage = i;
-      fetchListings(currentPage).then(createPagination);
-    });
-    pageItem.appendChild(pageLink);
-    pagination.appendChild(pageItem);
-  }
+//   for (let i = startPage; i <= endPage; i++) {
+//     const pageItem = document.createElement("li");
+//     pageItem.classList.add("page-item");
+//     if (i === currentPage) {
+//       pageItem.classList.add("active");
+//     }
+//     const pageLink = document.createElement("a");
+//     pageLink.classList.add("page-link");
+//     pageLink.href = "#";
+//     pageLink.innerText = i;
+//     pageLink.addEventListener("click", (event) => {
+//       event.preventDefault();
+//       currentPage = i;
+//       fetchListings(currentPage).then(createPagination);
+//     });
+//     pageItem.appendChild(pageLink);
+//     pagination.appendChild(pageItem);
+//   }
 
-  const nextItem = document.createElement("li");
-  nextItem.classList.add("page-item");
-  if (currentPage === totalPages) {
-    nextItem.classList.add("disabled");
-  }
-  const nextLink = document.createElement("a");
-  nextLink.classList.add("page-link");
-  nextLink.href = "#";
-  nextLink.innerText = "Next";
-  nextLink.addEventListener("click", (event) => {
-    event.preventDefault();
-    if (currentPage < totalPages) {
-      currentPage++;
-      fetchListings(currentPage).then(createPagination);
-    }
-  });
-  nextItem.appendChild(nextLink);
-  pagination.appendChild(nextItem);
-}
+//   const nextItem = document.createElement("li");
+//   nextItem.classList.add("page-item");
+//   if (currentPage === totalPages) {
+//     nextItem.classList.add("disabled");
+//   }
+//   const nextLink = document.createElement("a");
+//   nextLink.classList.add("page-link");
+//   nextLink.href = "#";
+//   nextLink.innerText = "Next";
+//   nextLink.addEventListener("click", (event) => {
+//     event.preventDefault();
+//     if (currentPage < totalPages) {
+//       currentPage++;
+//       fetchListings(currentPage).then(createPagination);
+//     }
+//   });
+//   nextItem.appendChild(nextLink);
+//   pagination.appendChild(nextItem);
+// }
 
-fetchListings(currentPage).then(createPagination);
+// fetchListings(currentPage).then(createPagination);
