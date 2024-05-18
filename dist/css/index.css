@@ -12090,6 +12090,11 @@ footer {
   --bs-btn-disabled-border-color: #0d6efd;
 }
 
+.singleItem {
+  width: 100%;
+  height: 50%;
+}
+
 .secondary-headline {
   align-self: stretch;
   position: relative;

@@ -15,7 +15,7 @@ export default async function fetchSingleItem() {
     <h1>${data?.data?.title}</h1>
     <p>${data?.data?.description}</p>
     <p>${data.data?.price}</p>
-    <img src=${data?.data?.media[0]?.url} alt="${data.title}">
+    <img class="singleItem" src=${data?.data?.media[0]?.url} alt="${data.title}">
     `;
   } catch (error) {
     console.error(error);
