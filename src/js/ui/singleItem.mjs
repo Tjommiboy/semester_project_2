@@ -10,11 +10,11 @@ export default async function fetchSingleItem() {
   try {
     const response = await fetch(url);
     const data = await response.json();
-
+    console.log(data);
     singleItem.innerHTML = `
     <h1>${data?.data?.title}</h1>
-    <p>${data?.data?.description}</p>
-    <p>${data.data?.price}</p>
+    <p class="singleItemDiscription">${data?.data?.description}</p>
+    <p class="singleItemPrice">Ends ${data.data?.endsAt}</p>
     <img class="singleItem" src=${data?.data?.media[0]?.url} alt="${data.title}">
     `;
   } catch (error) {

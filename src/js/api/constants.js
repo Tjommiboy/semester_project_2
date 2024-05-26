@@ -1,37 +1,32 @@
 // import { load } from "../storage/index.js";
 
-export const API_KEY = "1d63e6d7-3501-4b3a-8a83-d8834faba43a";
+// import { headers } from "./headers";
+
+export const API_KEY = "f426f15c-89e4-49c1-858f-c746e3f09c0e";
+export const API_KEY_URL = "/create-api-key";
 
 export const API_BASE = "https://v2.api.noroff.dev";
 export const API_AUTH = "/auth";
 export const API_REGISTER = "/register";
 export const API_LOGIN = "/login";
-
-// export async function getListings() {
-//   const response = await fetch(API_BASE + "/auction/listings", {
-//     headers: {
-//       Authorization: `Bearer ${load("token")}`,
-//     },
-//   });
-//   return await response.json();
-// }
-
-// export const apiKey = "/create-api-key";
+export const API_PROFILE = "/auction/profiles";
 
 // export async function getAPIkey() {
-//   const response = await fetch(API_BASE + API_AUTH + apiKey, {
+//   const response = await fetch(API_BASE + API_AUTH + API_KEY_URL, {
 //     method: "POST",
 //     headers: {
 //       "Content-Type": "application/json",
-//       Authorization: `Bearer ${load("token")}`,
+//       Authorrization: `Bearer ${load("token")}`,
 //     },
 //     body: JSON.stringify({
-//       name: "test key",
+//       name: "firstkey",
 //     }),
 //   });
+
 //   if (response.ok) {
 //     return await response.json();
 //   }
-//   console.error(await response.json());
-//   throw new Error("Failed to get API key");
+//   throw new Error("Failed to fetch API key");
 // }
+
+// getAPIkey().then(console.log);

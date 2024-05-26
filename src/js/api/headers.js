@@ -1,10 +1,10 @@
-import { load } from "../storage/load.js";
+import * as storage from "../storage/index.js";
 import { API_KEY } from "./constants.js";
 
 export function headers(hasBody = false) {
   const headers = new Headers();
 
-  const token = load("token");
+  const token = storage.load("token");
 
   if (token) {
     headers.append("Authorization", `Bearer ${token}`);
