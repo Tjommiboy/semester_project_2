@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../dist/css/index.css" />
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../../src/js/app.js"></script>
+    <title>Gimmi Bid N´Sell</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid parent-container">
+            <div href="../index.html" class="title-parent">
+              <a href="../index.html">
+                <h1 class="title">Gimmi</h1>
+                <div class="subtitle">
+                  <span class="subtitle">Bid </span>
+                  <span class="n">N</span>
+                  <span class="subtitle">´Sell</span>
+                </div>
+              </a>
+            </div>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a
+                    href="./login/index.html"
+                    id="loginButton"
+                    type="button"
+                    class="btn btn-primary me-2 mb-1"
+                  >
+                    Login
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="./register/index.html"
+                    id="registerButton"
+                    type="button"
+                    class="btn btn-primary me-2 mb-1"
+                  >
+                    Register
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="../profile/index.html"
+                    id="profileButton"
+                    type="button"
+                    class="btn btn-primary"
+                  >
+                    Profile
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="container mt-5">
+        <div class="row justify-content-center mb-4">
+          <div class="col-md-6">
+            <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+        <div id="singleItem" class="singleItem"></div>
+      </div>
+    </main>
+
+    <footer class="footer position-sticky bottom-0">
+      <div class="desktop-s-logo-none-copy">
+        <div class="container">
+          <div class="Tjommiboy-2024">
+            Tjommiboy @ 2024. All rights reserved.
+          </div>
+        </div>
+        <div class="container">
+          <div class="social-icons">
+            <a href="https://www.linkedin.com" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://github.com" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
