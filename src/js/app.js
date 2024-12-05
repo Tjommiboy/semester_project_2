@@ -1,6 +1,6 @@
 import { registerHandler } from "./events/auth/registerHandler.js";
 import { loginHandler } from "./events/auth/loginHandler.js";
-import fetchSingleItem from "./ui/singleItem.mjs";
+import { fetchSingleItem } from "./ui/singleItem.mjs";
 import { getListingsAndDisplay } from "./api/auth/getListings.js";
 import { getProfile, populateProfile } from "./api/auth/profile.js";
 

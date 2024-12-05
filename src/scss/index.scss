@@ -269,19 +269,27 @@ footer {
 .singleItem {
   width: 100%;
   height: 100%;
-  background-color: #2f536bce;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1em;
+
+  margin: 1em;
 }
 .singleItem img {
-  width: 100%; // Ensures the image adjusts to the container's width
-  height: auto; // Maintains the aspect ratio of the image
-  max-width: 600px; // Ensures the image does not exceed the container's max-width
+  width: 70%;
+  height: auto;
+  border-radius: 5px;
 }
-.singleItemDiscription {
+.singleItemInfo {
+}
+
+.singleItemCard {
+  background-color: #2f536bce;
+  border-radius: 5px;
+}
+.singleItemDescription {
   color: $gimmi-color;
   font-size: 18px;
 }
@@ -298,7 +306,10 @@ footer {
   color: $gimmi-color;
   font-size: 18px;
 }
-
+.singleItemUpdated {
+  color: $gimmi-color;
+  font-size: 18px;
+}
 .spinner {
   border: 16px solid #f3f3f3; /* Light grey */
   border-top: 16px solid #33373a; /* Blue */
@@ -343,24 +354,6 @@ footer {
   font-size: 18px;
 }
 
-// [data-visible="loggedIn"] {
-//   display: none;
-// }
-
-// [data-visible="loggedOut"] {
-//   display: initial;
-// }
-
-// .logged-in {
-//   [data-visible="loggedIn"] {
-//     display: initial;
-//   }
-//   [data-visible="loggedOut"] {
-//     display: none;
-//   }
-// }
-
-//-----------------Register---------------
 .secondary-headline {
   align-self: stretch;
   position: relative;

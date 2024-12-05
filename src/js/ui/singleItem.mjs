@@ -1,12 +1,13 @@
 import { API_BASE } from "../api/constants.js";
 
-const queryString = document.location.search;
-const params = new URLSearchParams(queryString);
-const id = params.get("id");
-const url = `${API_BASE}/auction/listings/${id}`;
-const singleItem = document.querySelector("div#singleItem");
+export async function fetchSingleItem() {
+  const queryString = document.location.search;
+  const params = new URLSearchParams(queryString);
+  const id = params.get("id");
+  const url = `${API_BASE}/auction/listings/${id}`;
+  const singleItem = document.querySelector("div#singleItem");
+  const singleItemInfo = document.querySelector("div#singleItemInfo");
 
-export default async function fetchSingleItem() {
   try {
     const response = await fetch(url);
     const data = await response.json();
@@ -15,17 +16,23 @@ export default async function fetchSingleItem() {
     const endsAtDate = data.data.endsAt.split("T")[0];
     const updatedAtDate = data.data.updated.split("T")[0];
 
+    // Ensure the DOM elements are found
+    if (!singleItem || !singleItemInfo) {
+      throw new Error("Required DOM elements not found");
+    }
+
+    // Update the DOM with fetched data
     singleItem.innerHTML = `
-      <h1>${data?.data?.title}</h1>
-      <p class="singleItemDiscription">${data?.data?.description}</p>
+    <h1>${data?.data?.title}</h1>
+      <img class="singleItem" src=${data?.data?.media[0]?.url} alt="${data.title}"> 
+    `;
 
+    singleItemInfo.innerHTML = `
 
-      <img class="singleItem" src=${data?.data?.media[0]?.url} alt="${data.title}">
+      <p class="singleItemDescription">${data?.data?.description}</p>
       <p class="singleItemBid">Bids: ${data.data._count.bids}</p>
       <p class="singleItemCountdown">Time left: <span id="countdown"></span></p>
       <p class="singleItemPrice">Ends at: ${endsAtDate}</p>
-
-
       <p class="singleItemUpdated">Last updated: ${updatedAtDate}</p>
     `;
 
@@ -58,6 +65,8 @@ export default async function fetchSingleItem() {
     updateCountdown();
   } catch (error) {
     console.error(error);
-    singleItem.innerHTML = "An error occurred while fetching the data";
+    if (singleItem) {
+      singleItem.innerHTML = "An error occurred while fetching the data";
+    }
   }
 }
