@@ -12026,21 +12026,27 @@ h5, .h5 {
 }
 
 .card {
-  width: 16em; /* Adjust the width as needed */
+  width: 16em;
   background-color: rgba(30, 30, 30, 0.7803921569);
   margin: 14px;
   cursor: pointer;
   box-shadow: 2px 12px 10px rgba(75, 75, 75, 0.5);
+  transition: all 0.1s ease-in-out;
+}
+.card:hover {
+  background-color: rgba(81, 81, 81, 0.7803921569);
+  box-shadow: 2px 14px 12px rgba(75, 75, 75, 0.7);
+  transform: translateY(-5px);
 }
 
 @media (max-width: 768px) {
   .card {
-    width: calc(50% - 20px); /* Adjust the width as needed for smaller screens */
+    width: calc(50% - 20px);
   }
 }
 .card-body {
   color: rgb(148, 219, 255);
-  background-color: rgba(42, 53, 60, 0.2745098039);
+  background-color: rgba(45, 134, 189, 0.2745098039);
   border-radius: 0px 0px 5px 5px;
 }
 
@@ -12090,6 +12096,7 @@ h5, .h5 {
 footer {
   margin-top: auto;
   z-index: 100;
+  padding-top: 6em;
 }
 
 .btn-primary {
@@ -12111,11 +12118,19 @@ footer {
 
 .singleItem {
   width: 100%;
-  height: 50%;
+  height: 100%;
+  background-color: rgba(47, 83, 107, 0.8078431373);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1em;
+}
+
+.singleItem img {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
 }
 
 .singleItemDiscription {
@@ -12124,6 +12139,17 @@ footer {
 }
 
 .singleItemPrice {
+  color: rgb(148, 219, 255);
+  font-size: 18px;
+}
+
+.singleItemBid {
+  color: rgb(148, 219, 255);
+  font-size: 26px;
+  text-decoration: underline;
+}
+
+.singleItemCountdown {
   color: rgb(148, 219, 255);
   font-size: 18px;
 }
@@ -12605,8 +12631,28 @@ footer {
   border-color: rgb(0, 0, 0);
   -webkit-text-stroke: 2px rgba(0, 0, 0, 0.491); /* Border color and width */
   text-stroke: 4px black;
+  transition: all 0.1s ease-in-out;
+}
+.title:hover {
+  animation: pulsate 1.5s infinite;
+  text-shadow: 2px 12px 50px rgb(151, 244, 254);
+  transform: scale(1.05);
 }
 
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    text-shadow: 2px 12px 30px rgba(151, 244, 254, 0.696);
+  }
+  50% {
+    transform: scale(1.1);
+    text-shadow: 2px 12px 50px rgb(151, 244, 254);
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 2px 12px 30px rgba(151, 244, 254, 0.696);
+  }
+}
 .n {
   color: rgb(148, 219, 255);
   font-family: "Roboto";
@@ -12699,7 +12745,8 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  text-align: center; /* Optional text alignment */
+  text-align: center;
+  margin-top: auto; /* Optional text alignment */
 }
 
 @media (max-width: 768px) {

@@ -2,7 +2,7 @@ import { API_BASE } from "../constants.js";
 import { headers } from "../headers.js";
 import { showSpinner, hideSpinner } from "../../ui/spinner.js";
 
-export async function getListingsAndDisplay(limit = 20, offset = 0) {
+export async function getListingsAndDisplay(limit = 100, offset = 0) {
   showSpinner();
   try {
     const response = await fetch(
@@ -18,7 +18,6 @@ export async function getListingsAndDisplay(limit = 20, offset = 0) {
     }
 
     const responseData = await response.json();
-    // console.log(responseData); // Log entire response
 
     const listingsData = responseData.data;
     const meta = responseData.meta;

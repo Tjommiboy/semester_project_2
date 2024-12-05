@@ -179,24 +179,28 @@ h5 {
 }
 
 .card {
-  width: 16em; /* Adjust the width as needed */
+  width: 16em;
   background-color: #1e1e1ec7;
   margin: 14px;
   cursor: pointer;
   box-shadow: 2px 12px 10px rgba(75, 75, 75, 0.5);
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    background-color: lighten(#1e1e1ec7, 20%);
+    box-shadow: 2px 14px 12px rgba(75, 75, 75, 0.7);
+    transform: translateY(-5px);
+  }
 }
 
 @media (max-width: 768px) {
   .card {
-    width: calc(
-      50% - 20px
-    ); /* Adjust the width as needed for smaller screens */
+    width: calc(50% - 20px);
   }
 }
 
 .card-body {
   color: $gimmi-color;
-  background-color: #2a353c46;
+  background-color: #2d86bd46;
   border-radius: 0px 0px 5px 5px;
 }
 .card-img-top {
@@ -243,6 +247,7 @@ h5 {
 footer {
   margin-top: auto;
   z-index: 100;
+  padding-top: 6em;
 }
 .btn-primary {
   --bs-btn-color: #fff;
@@ -263,18 +268,33 @@ footer {
 
 .singleItem {
   width: 100%;
-  height: 50%;
-
+  height: 100%;
+  background-color: #2f536bce;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1em;
+}
+.singleItem img {
+  width: 100%; // Ensures the image adjusts to the container's width
+  height: auto; // Maintains the aspect ratio of the image
+  max-width: 600px; // Ensures the image does not exceed the container's max-width
 }
 .singleItemDiscription {
   color: $gimmi-color;
   font-size: 18px;
 }
 .singleItemPrice {
+  color: $gimmi-color;
+  font-size: 18px;
+}
+.singleItemBid {
+  color: $gimmi-color;
+  font-size: 26px;
+  text-decoration: underline;
+}
+.singleItemCountdown {
   color: $gimmi-color;
   font-size: 18px;
 }
@@ -730,6 +750,29 @@ footer {
   border-color: rgb(0, 0, 0);
   -webkit-text-stroke: 2px rgba(0, 0, 0, 0.491); /* Border color and width */
   text-stroke: 4px black;
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    animation: pulsate 1.5s infinite; // Apply the pulsating effect
+    text-shadow: 2px 12px 50px rgba(151, 244, 254, 1);
+    transform: scale(1.05); // Slightly enlarge the title on hover
+  }
+}
+
+// Define the pulsating animation
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    text-shadow: 2px 12px 30px rgba(151, 244, 254, 0.696);
+  }
+  50% {
+    transform: scale(1.1);
+    text-shadow: 2px 12px 50px rgba(151, 244, 254, 1);
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 2px 12px 30px rgba(151, 244, 254, 0.696);
+  }
 }
 .n {
   color: $gimmi-color;
@@ -815,7 +858,8 @@ footer {
   bottom: 0;
   width: 100%;
 
-  text-align: center; /* Optional text alignment */
+  text-align: center;
+  margin-top: auto; /* Optional text alignment */
 }
 @media (max-width: 768px) {
   .card {

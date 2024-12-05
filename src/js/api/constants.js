@@ -2,7 +2,7 @@
 
 // import { headers } from "./headers";
 
-export const API_KEY = "f426f15c-89e4-49c1-858f-c746e3f09c0e";
+export const API_KEY = "607cabb6-350c-47c9-acc8-972303e122c3";
 export const API_KEY_URL = "/create-api-key";
 
 export const API_BASE = "https://v2.api.noroff.dev";
@@ -16,7 +16,7 @@ export const API_PROFILE = "/auction/profiles";
 //     method: "POST",
 //     headers: {
 //       "Content-Type": "application/json",
-//       Authorrization: `Bearer ${load("token")}`,
+//       Authorization: `Bearer ${load("token")}`,
 //     },
 //     body: JSON.stringify({
 //       name: "firstkey",
