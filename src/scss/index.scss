@@ -43,7 +43,7 @@ h1 {
   color: $gimmi-color;
   font-weight: 800;
   position: relative;
-  font-size: var(--step-5);
+  font-size: var(--step-3);
   line-height: 110%;
   font-family: Roboto;
 
@@ -269,24 +269,28 @@ footer {
 .singleItem {
   width: 100%;
   height: 100%;
-
+  background-color: #2f536bce;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  margin: 1em;
 }
 .singleItem img {
-  width: 70%;
+  width: 90%;
+  max-width: 600px;
   height: auto;
-  border-radius: 5px;
+
+  border-radius: 5px; /* Adds rounded corners */
+  object-fit: cover; /* Ensures the image scales nicely within the container */
 }
 .singleItemInfo {
+  background-color: #2f536bce;
+  padding: 1em;
+  border-radius: 5px;
 }
 
 .singleItemCard {
-  background-color: #2f536bce;
   border-radius: 5px;
 }
 .singleItemDescription {

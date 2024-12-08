@@ -23,13 +23,16 @@ export async function fetchSingleItem() {
 
     // Update the DOM with fetched data
     singleItem.innerHTML = `
-    <h1>${data?.data?.title}</h1>
-      <img class="singleItem" src=${data?.data?.media[0]?.url} alt="${data.title}"> 
-    `;
+  <h1>${data?.data?.title}</h1>
+  <img 
+    class="singleItem" 
+    src="${data?.data?.media && data?.data?.media.length > 0 ? data.data.media[0].url : "/pictures/Missing-Person-Law.jpg"}" 
+    alt="${data?.data?.media && data?.data?.media.length > 0 ? data.data.media[0].alt || data.data.title : "Placeholder Image"}">
+`;
 
     singleItemInfo.innerHTML = `
 
-      <p class="singleItemDescription">${data?.data?.description}</p>
+      <p class="singleItemDescription"> Description:${data?.data?.description}</p>
       <p class="singleItemBid">Bids: ${data.data._count.bids}</p>
       <p class="singleItemCountdown">Time left: <span id="countdown"></span></p>
       <p class="singleItemPrice">Ends at: ${endsAtDate}</p>

@@ -27,7 +27,7 @@ export async function getListingsAndDisplay(limit = 100, offset = 0) {
         `Total items: ${meta.totalCount}, Total pages: ${meta.pageCount}`,
       );
       console.log(meta);
-      generatePagination(meta, limit, offset); // Generate pagination
+      generatePagination(meta, limit, offset);
     } else {
       console.error("Meta data not found in API response:", responseData);
     }
