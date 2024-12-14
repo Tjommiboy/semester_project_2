@@ -1,11 +1,11 @@
-import { API_BASE } from "../constants.js";
-import { API_AUTH } from "../constants.js";
-import { API_LOGIN } from "../constants.js";
+import { API_BASE } from "../Utilities/constants.js";
+import { API_AUTH } from "../Utilities/constants.js";
+import { API_LOGIN } from "../Utilities/constants.js";
 import { showSpinner, hideSpinner } from "../../ui/spinner.js";
-import { updateLoginVisibility } from "../../ui/auth.js";
+// import { updateLoginVisibility } from "../../ui/auth.js";
 
 import * as storage from "../../storage/index.js";
-import { headers } from "../headers.js";
+import { headers } from "../Utilities/headers.js";
 
 export async function loginUser(user) {
   const url = API_BASE + API_AUTH + API_LOGIN;
@@ -36,7 +36,7 @@ export async function loginUser(user) {
     };
 
     storage.save("profile", profile);
-    updateLoginVisibility();
+
     // Redirect to the ./index.html page upon successful login
     window.location.href = "../../../../index.html";
 

@@ -1,5 +1,5 @@
-import { apiPath } from "../constants.js";
-import { headers } from "../headers.js";
+import { apiPath } from "../Utilities/constants.js";
+import { headers } from "../Utilities/headers.js";
 
 export async function react(postId, symbol) {
   const response = await fetch(
@@ -7,7 +7,7 @@ export async function react(postId, symbol) {
     {
       headers: headers(),
       method: "put",
-    },
+    }
   );
 
   if (response.ok) {

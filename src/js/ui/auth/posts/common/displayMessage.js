@@ -1,4 +1,8 @@
-export function displayMessage(container, messageType, message) {
+export function displayMessage(
+  container,
+  messageType = "error",
+  message = "something went wrong"
+) {
   let parent = container;
 
   if (typeof container === "string") {

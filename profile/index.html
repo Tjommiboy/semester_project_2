@@ -37,7 +37,7 @@
     <div id="spinner" class="spinner" style="display: none"></div>
     <header>
       <div class="container">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav id="top-nav" class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-fluid parent-container">
             <div href="../index.html" class="title-parent">
               <a href="../index.html">
@@ -105,19 +105,39 @@
         </div>
       </div>
       <div class="container">
-        <div id="profile" class="d-flex flex-column align-items-center">
-          <img id="avatar" src="" alt="Profile Avatar" />
-          <h1 id="name"></h1>
-          <p class="profileEmail" id="email"></p>
-          <img class="banner" id="banner" src="" alt="Profile Banner" />
-          <p class="profileBio" id="bio"></p>
-          <p class="profileCredits" id="credits"></p>
+        <!-- Profile Section -->
+        <div class="row align-items-center">
+          <div class="col-xxl-6 col-md-5 col-sm-7 mb-md-0">
+            <div class="mb-3">
+              <!-- Adding margin bottom -->
+              <img
+                id="avatar"
+                class="profile_img"
+                src=""
+                alt="Profile Avatar"
+              />
+            </div>
+            <div class="profileinfoBG gx-4">
+              <h1 id="name"></h1>
+              <p class="profileEmail" id="email"></p>
+              <img class="banner" id="banner" src="" alt="Profile Banner" />
+              <p class="profileBio" id="bio"></p>
+              <p class="profileCredits" id="credits"></p>
+              <div class="col-md-6 d-flex">
+                <a href="/create/index.html" class="btn btn-primary"
+                  >New Listing</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Button Section -->
         </div>
       </div>
       <div id="postsContainer"></div>
     </main>
 
-    <footer class="footer position-sticky bottom-0">
+    <footer class="footer">
       <div class="desktop-s-logo-none-copy">
         <div class="container">
           <div class="Tjommiboy-2024">

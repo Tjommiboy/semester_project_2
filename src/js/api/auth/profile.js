@@ -1,11 +1,11 @@
-import { authFetch } from "../authfetch.js";
-import { API_BASE, API_PROFILE } from "../constants.js";
-import { load } from "../../storage/index.js";
+import { authFetch } from "../Utilities/authfetch.js";
+import { API_BASE, API_PROFILE } from "../Utilities/constants.js";
 import { showSpinner, hideSpinner } from "../../ui/spinner.js";
+import { loadProfile } from "../../storage/loadProfile.js";
 export async function getProfile() {
   try {
     showSpinner();
-    const profile = load("profile");
+    const profile = loadProfile("profile");
 
     if (!profile || !profile.name) {
       const missingField = !profile ? "Profile" : "Name";

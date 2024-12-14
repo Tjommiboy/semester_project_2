@@ -1,6 +1,6 @@
 import { profile } from "../auth/state.js";
-import { apiPath } from "../constants.js";
-import { headers } from "../headers.js";
+import { apiPath } from "../Utilities/constants.js";
+import { headers } from "../Utilities/headers.js";
 
 export async function updatePost(id, title, body, media, tags) {
   const { name: owner } = profile();

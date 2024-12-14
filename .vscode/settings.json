@@ -4,5 +4,14 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
-  "eslint.validate": ["javascript"]
+  "eslint.validate": ["javascript"],
+  "cSpell.words": [
+    "authfetch",
+    "companyname",
+    "comple",
+    "gimmi",
+    "Noroff",
+    "onlogout",
+    "Tjommiboy"
+  ]
 }

@@ -1,5 +1,5 @@
-import { apiPath } from "../constants.js";
-import { headers } from "../headers.js";
+import { apiPath } from "../Utilities/constants.js";
+import { headers } from "../Utilities/headers.js";
 
 export async function comment(postId, body, replyToId) {
   const response = await fetch(`${apiPath}/social/posts/${postId}/comment`, {

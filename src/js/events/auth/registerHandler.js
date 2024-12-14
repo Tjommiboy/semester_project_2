@@ -38,7 +38,7 @@ async function submitForm(event) {
     displayMessage(
       "#message",
       "success",
-      "Successfully Registered. Please <a href='/login/index.html'>login</a>",
+      "Successfully Registered. Please <a href='/login/index.html'>login</a>"
     );
     form.reset();
   } catch (error) {

@@ -1,7 +1,7 @@
-import { API_BASE } from "../constants.js";
-import { API_AUTH } from "../constants.js";
-import { API_REGISTER } from "../constants.js";
-import { headers } from "../headers.js";
+import { API_BASE } from "../Utilities/constants.js";
+import { API_AUTH } from "../Utilities/constants.js";
+import { API_REGISTER } from "../Utilities/constants.js";
+import { headers } from "../Utilities/headers.js";
 import { showSpinner, hideSpinner } from "../../ui/spinner.js";
 
 export async function registerUser(user) {
@@ -27,6 +27,7 @@ export async function registerUser(user) {
     return json;
   } catch (error) {
     console.error(error);
+
     throw error;
   } finally {
     hideSpinner(); // Ensure hideSpinner is called in both success and error cases

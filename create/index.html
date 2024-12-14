@@ -21,7 +21,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./dist/css/index.css" />
+    <link rel="stylesheet" href="../../dist/css/index.css" />
     <!-- <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
     <script
       defer
@@ -29,9 +29,8 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="src/js/app.js"></script>
-
-    <title>Gimmi Bid N´Sell</title>
+    <script type="module" src="../../src/js/app.js"></script>
+    <title>Create Listing | Gimmi Bid N´Sell</title>
   </head>
   <body>
     <div id="spinner" class="spinner" style="display: none"></div>
@@ -39,7 +38,7 @@
       <div class="container">
         <nav id="top-nav" class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-fluid parent-container">
-            <div href="../index.html" class="title-parent">
+            <div class="title-parent">
               <a href="../index.html">
                 <h1 class="title">Gimmi</h1>
                 <div class="subtitle">
@@ -94,7 +93,6 @@
                     Profile
                   </a>
                 </li>
-
                 <li class="nav-item">
                   <button
                     type="button"
@@ -114,28 +112,100 @@
     </header>
     <main>
       <div class="container mt-5">
-        <div class="row justify-content-center mb-4">
-          <div class="col-md-6">
-            <form class="d-flex">
+        <!-- <form
+          id="createListingForm"
+          class="createListingForm container col-12 col-sm-12 col-md-12 col-lg-6"
+          action=""
+        >
+          <div class="container col-12 col-sm-12 col-md-12 col-lg-10">
+            <div class="mb-3">
+              <label for="createTitle" class="form-label">Title:</label>
               <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
+                class="form-control"
+                id="createTitle"
+                name="title"
+                placeholder="title"
               />
-              <button class="btn btn-primary" type="submit">Search</button>
-            </form>
+            </div>
+            <div class="mb-3">
+              <label for="body" class="form-label">Description:</label>
+              <textarea
+                class="form-control"
+                id="createDescription"
+                name="description"
+                rows="3"
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="tags" class="form-label"
+                >Tags (comma-separated):</label
+              >
+              <input class="form-control" type="text" id="tags" name="tags" />
+            </div>
+            <div class="mb-3">
+              <label for="media-url" class="form-label">Media URL:</label>
+              <input
+                class="form-control"
+                type="url"
+                id="media-url"
+                name="media-url"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="media-alt" class="form-label">Media Alt Text:</label>
+              <input
+                class="form-control"
+                type="text"
+                id="media-alt"
+                name="media-alt"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="endsAt" class="form-label">Ends At:</label>
+              <input
+                type="datetime-local"
+                class="form-control"
+                id="endsAt"
+                name="endsAt"
+              />
+            </div>
+            <button
+              type="submit"
+              id="createListingButton"
+              class="btn btn-primary"
+            >
+              Create Listing
+            </button>
           </div>
-        </div>
+        </form> -->
 
-        <div id="listingsContainer" class="listings-container">
-          <div class="container">
-            <nav aria-label="Page navigation"></nav>
-          </div>
-        </div>
+        <form id="createListingForm">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" />
+
+          <label for="description">Body:</label>
+          <textarea id="description" name="description"></textarea>
+
+          <label for="tags">Tags (comma-separated):</label>
+          <input type="text" id="tags" name="tags" />
+
+          <label for="media-url">Media URL:</label>
+          <input type="url" id="media-url" name="media-url" />
+
+          <label for="media-alt">Media Alt Text:</label>
+          <input type="text" id="media-alt" name="media-alt" />
+          <label for="endsAt" class="form-label">Ends At:</label>
+          <input
+            type="datetime-local"
+            class="form-control"
+            id="endsAt"
+            name="endsAt"
+          />
+
+          <button type="submit">Create Listing</button>
+        </form>
       </div>
     </main>
-
     <footer class="footer">
       <div class="desktop-s-logo-none-copy">
         <div class="container">

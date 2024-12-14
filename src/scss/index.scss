@@ -2,6 +2,8 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 :root {
+  --step--4: clamp(0.325rem, 0.262rem + 0.318vw, 0.5rem);
+  --step--3: clamp(0.416rem, 0.337rem + 0.407vw, 0.65rem);
   --step--2: clamp(0.5206rem, 0.419rem + 0.508vw, 0.8rem);
   --step--1: clamp(0.625rem, 0.4886rem + 0.6818vw, 1rem);
   --step-0: clamp(0.75rem, 0.5682rem + 0.9091vw, 1.25rem);
@@ -43,7 +45,7 @@ h1 {
   color: $gimmi-color;
   font-weight: 800;
   position: relative;
-  font-size: var(--step-3);
+  font-size: var(--step-2);
   line-height: 110%;
   font-family: Roboto;
 
@@ -88,6 +90,7 @@ h5 {
   font-size: 16px;
   color: $gimmi-color;
 }
+
 .form-control :focus {
   outline: none;
 }
@@ -107,6 +110,7 @@ h5 {
   background-color: #0f63fe00;
   border: 2px solid $gimmi-color;
   color: $gimmi-color;
+  box-shadow: 2px 12px 10px rgba(149, 148, 148, 0.377);
   &:hover {
     background-color: $gimmi-color; // Background color on hover
     border: 2px solid $gimmi-color;
@@ -138,8 +142,7 @@ h5 {
   height: 0.5em;
   color: $gimmi-color;
 }
-.fixed-top {
-}
+
 .parent-container {
   display: flex;
   justify-content: flex-end;
@@ -169,7 +172,7 @@ h5 {
 
 .Tjommiboy-2024 {
   color: $gimmi-color;
-  font-size: var(--step--2);
+  font-size: var(--step--3);
 }
 
 .listings-container {
@@ -194,7 +197,7 @@ h5 {
 
 @media (max-width: 768px) {
   .card {
-    width: calc(50% - 20px);
+    width: calc(90% - 10px);
   }
 }
 
@@ -202,6 +205,18 @@ h5 {
   color: $gimmi-color;
   background-color: #2d86bd46;
   border-radius: 0px 0px 5px 5px;
+}
+.card-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limits text to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limits text to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .card-img-top {
   width: 100%;
@@ -244,11 +259,6 @@ h5 {
   color: $gimmi-color;
 }
 
-footer {
-  margin-top: auto;
-  z-index: 100;
-  padding-top: 6em;
-}
 .btn-primary {
   --bs-btn-color: #fff;
   --bs-btn-bg: #0d6dfd00;
@@ -295,11 +305,11 @@ footer {
 }
 .singleItemDescription {
   color: $gimmi-color;
-  font-size: 18px;
+  font-size: var(--step-0);
 }
 .singleItemPrice {
   color: $gimmi-color;
-  font-size: 18px;
+  font-size: var(--step-0);
 }
 .singleItemBid {
   color: $gimmi-color;
@@ -308,14 +318,14 @@ footer {
 }
 .singleItemCountdown {
   color: $gimmi-color;
-  font-size: 18px;
+  font-size: var(--step-0);
 }
 .singleItemUpdated {
   color: $gimmi-color;
-  font-size: 18px;
+  font-size: var(--step-0);
 }
 .spinner {
-  border: 16px solid #f3f3f3; /* Light grey */
+  border: 16px solid rgb(148, 219, 255); /* Light grey */
   border-top: 16px solid #33373a; /* Blue */
   border-radius: 50%;
   width: 120px;
@@ -343,6 +353,25 @@ footer {
 
 .banner {
   height: 20px;
+}
+
+.profileinfoBG {
+  background-color: rgba(80, 101, 104, 0.403);
+  padding: 1em;
+  border-radius: 5px;
+  width: 100%; /* Ensures the element is flexible */
+  max-width: 300px; /* Maximum width */
+  min-width: 200px; /* Minimum width */
+  box-sizing: border-box; /* Includes padding in width calculation */
+}
+
+.profile_img {
+  border-radius: 5px;
+  box-shadow: 2px 12px 10px #8b8b8b80;
+  width: 100%; /* Ensures the image is responsive */
+  max-width: 300px; /* Maximum width for the image */
+  min-width: 150px; /* Minimum width */
+  height: auto; /* Maintains aspect ratio */
 }
 .profileEmail {
   color: $gimmi-color;
@@ -377,6 +406,10 @@ footer {
   align-items: flex-start;
   justify-content: flex-start;
   font-size: 32px;
+}
+.sellerAvatar {
+  border-radius: 50%;
+  width: 100px;
 }
 .label {
   align-self: stretch;
@@ -524,6 +557,26 @@ footer {
   color: #fff;
   font-family: Roboto;
 }
+
+.footer {
+  bottom: 0;
+}
+
+// .footer .social-icons a {
+//   margin: 0 5px;
+//   color: #000; /* Adjust for preferred color */
+//   text-decoration: none;
+// }
+
+// .footer .social-icons a:hover {
+//   color: #007bff; /* Change hover color */
+// }
+
+// .footer .Tjommiboy-2024 {
+//   margin-bottom: 10px;
+//   font-size: 0.9rem;
+//   color: #6c757d;
+// }
 
 //---------Login---------------------------
 
@@ -746,7 +799,7 @@ footer {
   text-shadow: 2px 12px 30px rgba(151, 244, 254, 0.696);
   border-color: rgb(0, 0, 0);
   -webkit-text-stroke: 2px rgba(0, 0, 0, 0.491); /* Border color and width */
-  text-stroke: 4px black;
+
   transition: all 0.1s ease-in-out;
 
   &:hover {
@@ -776,7 +829,6 @@ footer {
   font-family: "Roboto";
   font-weight: 800;
   -webkit-text-stroke: 2px rgba(0, 0, 0, 0.491); /* Border color and width */
-  text-stroke: 4px black;
 }
 .subtitle {
   position: relative;
@@ -787,7 +839,6 @@ footer {
   color: $gimmi-color;
   text-shadow: 2px 2px 10px rgba(151, 244, 254, 0.696);
   -webkit-text-stroke: 2px rgba(0, 0, 0, 0.491); /* Border color and width */
-  text-stroke: 4px black;
 }
 .n {
   text-shadow: 2px 2px 10px rgba(151, 244, 254, 0.696);
@@ -839,7 +890,7 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 16px 80px;
+  padding: 16px 15px;
   box-sizing: border-box;
   gap: 48px;
   text-align: left;
@@ -849,15 +900,15 @@ footer {
   position: fixed; /* Change position to fixed */
   bottom: 0;
 }
-footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+// footer {
+//   position: absolute;
+//   left: 0;
+//   bottom: 0;
+//   width: 100%;
 
-  text-align: center;
-  margin-top: auto; /* Optional text alignment */
-}
+//   text-align: center;
+//   margin-top: auto; /* Optional text alignment */
+// }
 @media (max-width: 768px) {
   .card {
     width: calc(90% - 20px);

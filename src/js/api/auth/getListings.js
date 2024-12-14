@@ -1,15 +1,12 @@
-import { API_BASE } from "../constants.js";
-import { headers } from "../headers.js";
+import { API_BASE } from "../Utilities/constants.js";
 import { showSpinner, hideSpinner } from "../../ui/spinner.js";
+import { authFetch } from "../Utilities/authfetch.js"; // Import authFetch
 
 export async function getListingsAndDisplay(limit = 100, offset = 0) {
   showSpinner();
   try {
-    const response = await fetch(
-      `${API_BASE}/auction/listings?limit=${limit}&offset=${offset}&_reactions=true&_author=true&_comments=true`,
-      {
-        headers: headers(),
-      },
+    const response = await authFetch(
+      `${API_BASE}/auction/listings?limit=${limit}&offset=${offset}&_reactions=true&_author=true&_comments=true`
     );
 
     if (!response.ok) {
@@ -24,10 +21,10 @@ export async function getListingsAndDisplay(limit = 100, offset = 0) {
 
     if (meta) {
       console.log(
-        `Total items: ${meta.totalCount}, Total pages: ${meta.pageCount}`,
+        `Total items: ${meta.totalCount}, Total pages: ${meta.pageCount}`
       );
       console.log(meta);
-      generatePagination(meta, limit, offset);
+      // generatePagination(meta, limit, offset);
     } else {
       console.error("Meta data not found in API response:", responseData);
     }
@@ -95,56 +92,56 @@ export async function getListingsAndDisplay(limit = 100, offset = 0) {
   hideSpinner();
 }
 
-export function generatePagination(meta, itemsPerPage, currentOffset) {
-  const paginationContainer = document.getElementById("pagination");
-  paginationContainer.innerHTML = ""; // Clear existing pagination
+// export function generatePagination(meta, itemsPerPage, currentOffset) {
+//   const paginationContainer = document.getElementById("pagination");
+//   paginationContainer.innerHTML = ""; // Clear existing pagination
 
-  const currentPage = meta.currentPage;
-  const isFirstPage = meta.isFirstPage;
-  const isLastPage = meta.isLastPage;
-  const totalPages = meta.pageCount;
+//   const currentPage = meta.currentPage;
+//   const isFirstPage = meta.isFirstPage;
+//   const isLastPage = meta.isLastPage;
+//   const totalPages = meta.pageCount;
 
-  const maxPagesToShow = 10;
-  let startPage = Math.max(1, currentPage - Math.floor(maxPagesToShow / 2));
-  let endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
+//   const maxPagesToShow = 10;
+//   let startPage = Math.max(1, currentPage - Math.floor(maxPagesToShow / 2));
+//   let endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
 
-  if (endPage - startPage < maxPagesToShow - 1) {
-    startPage = Math.max(1, endPage - maxPagesToShow + 1);
-  }
+//   if (endPage - startPage < maxPagesToShow - 1) {
+//     startPage = Math.max(1, endPage - maxPagesToShow + 1);
+//   }
 
-  if (!isFirstPage) {
-    const prevItem = document.createElement("li");
-    prevItem.classList.add("page-item");
-    prevItem.innerHTML = `<a class="page-link" href="#">Previous</a>`;
-    prevItem.addEventListener("click", () => {
-      const newOffset = currentOffset - itemsPerPage;
-      getListingsAndDisplay(itemsPerPage, newOffset < 0 ? 0 : newOffset);
-    });
-    paginationContainer.appendChild(prevItem);
-  }
+//   if (!isFirstPage) {
+//     const prevItem = document.createElement("li");
+//     prevItem.classList.add("page-item");
+//     prevItem.innerHTML = `<a class="page-link" href="#">Previous</a>`;
+//     prevItem.addEventListener("click", () => {
+//       const newOffset = currentOffset - itemsPerPage;
+//       getListingsAndDisplay(itemsPerPage, newOffset < 0 ? 0 : newOffset);
+//     });
+//     paginationContainer.appendChild(prevItem);
+//   }
 
-  for (let i = startPage; i <= endPage; i++) {
-    const pageItem = document.createElement("li");
-    pageItem.classList.add("page-item");
-    if (i === currentPage) {
-      pageItem.classList.add("active");
-    }
-    pageItem.innerHTML = `<a class="page-link" href="#">${i}</a>`;
-    pageItem.addEventListener("click", () => {
-      const newOffset = itemsPerPage * (i - 1);
-      getListingsAndDisplay(itemsPerPage, newOffset);
-    });
-    paginationContainer.appendChild(pageItem);
-  }
+//   for (let i = startPage; i <= endPage; i++) {
+//     const pageItem = document.createElement("li");
+//     pageItem.classList.add("page-item");
+//     if (i === currentPage) {
+//       pageItem.classList.add("active");
+//     }
+//     pageItem.innerHTML = `<a class="page-link" href="#">${i}</a>`;
+//     pageItem.addEventListener("click", () => {
+//       const newOffset = itemsPerPage * (i - 1);
+//       getListingsAndDisplay(itemsPerPage, newOffset);
+//     });
+//     paginationContainer.appendChild(pageItem);
+//   }
 
-  if (!isLastPage) {
-    const nextItem = document.createElement("li");
-    nextItem.classList.add("page-item");
-    nextItem.innerHTML = `<a class="page-link" href="#">Next</a>`;
-    nextItem.addEventListener("click", () => {
-      const newOffset = currentOffset + itemsPerPage;
-      getListingsAndDisplay(itemsPerPage, newOffset);
-    });
-    paginationContainer.appendChild(nextItem);
-  }
-}
+//   if (!isLastPage) {
+//     const nextItem = document.createElement("li");
+//     nextItem.classList.add("page-item");
+//     nextItem.innerHTML = `<a class="page-link" href="#">Next</a>`;
+//     nextItem.addEventListener("click", () => {
+//       const newOffset = currentOffset + itemsPerPage;
+//       getListingsAndDisplay(itemsPerPage, newOffset);
+//     });
+//     paginationContainer.appendChild(nextItem);
+//   }
+// }
