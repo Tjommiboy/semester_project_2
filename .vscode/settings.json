@@ -6,12 +6,16 @@
   },
   "eslint.validate": ["javascript"],
   "cSpell.words": [
+    "adm",
+    "Adminbtns",
     "authfetch",
+    "Btns",
     "companyname",
     "comple",
     "gimmi",
     "Noroff",
     "onlogout",
+    "profileinfo",
     "Tjommiboy"
   ]
 }

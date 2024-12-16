@@ -1,13 +1,13 @@
 import { profile } from "../auth/state.js";
-import { apiPath } from "../Utilities/constants.js";
+import { API_UPDATE } from "../Utilities/constants.js";
 import { headers } from "../Utilities/headers.js";
 
-export async function updatePost(id, title, body, media, tags) {
+export async function updateListing(id, title, body, media, tags, endsAt) {
   const { name: owner } = profile();
 
-  const response = await fetch(`${apiPath}/social/posts/${id}`, {
-    method: "put",
-    body: JSON.stringify({ title, body, media, tags, owner }),
+  const response = await fetch(`${API_UPDATE}/${id}`, {
+    method: "PUT",
+    body: JSON.stringify({ title, body, media, tags, endsAt, owner }),
     headers: headers("application/json"),
   });
 

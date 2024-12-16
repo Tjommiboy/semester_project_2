@@ -5,7 +5,6 @@ import { API_CREATE } from "../Utilities/constants.js";
 export async function createListing(formData) {
   showSpinner();
   try {
-    // Validate media URLs are fully formed
     if (formData.media && formData.media.length > 0) {
       for (const media of formData.media) {
         try {
@@ -19,7 +18,6 @@ export async function createListing(formData) {
       }
     }
 
-    // Prepare and send the POST request
     const response = await authFetch(`${API_CREATE}`, {
       method: "POST",
 
@@ -34,8 +32,8 @@ export async function createListing(formData) {
     return data;
   } catch (error) {
     console.error("Error creating listing:", error.message);
-    throw error; // Rethrow to handle further downstream
+    throw error;
   } finally {
-    hideSpinner(); // Ensure spinner is hidden even if the request fails
+    hideSpinner();
   }
 }

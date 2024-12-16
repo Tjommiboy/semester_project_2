@@ -5,10 +5,10 @@ export function CreateListingButton() {
     const form = document.getElementById("createListingForm");
     if (form) {
       form.addEventListener("submit", async (event) => {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault();
         console.log("Form submit event detected");
         try {
-          await onCreateListing(event); // Handle form submission
+          await onCreateListing(event);
           console.log("Post creation completed");
         } catch (error) {
           console.error("Error during post creation:", error);
@@ -32,7 +32,6 @@ export async function onCreateListing(event) {
     document.getElementById("endsAt").value,
   ).toISOString();
 
-  // Prepare form data
   const formData = {
     title,
     description: description || "", // Optional field
@@ -48,7 +47,6 @@ export async function onCreateListing(event) {
     endsAt,
   };
 
-  // Validate required fields
   if (!title || !endsAt) {
     alert("Title and end date are required fields.");
     return;

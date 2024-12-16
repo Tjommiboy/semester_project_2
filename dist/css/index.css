@@ -12438,7 +12438,9 @@ h5, .h5 {
 }
 
 .footer {
-  bottom: 0;
+  width: 100%;
+  position: fixed; /* Keep it fixed at the bottom */
+  bottom: 0; /* Align to the bottom */
 }
 
 .secondary-headline {
