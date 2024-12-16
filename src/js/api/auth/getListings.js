@@ -6,7 +6,7 @@ export async function getListingsAndDisplay(limit = 100, offset = 0) {
   showSpinner();
   try {
     const response = await authFetch(
-      `${API_BASE}/auction/listings?limit=${limit}&offset=${offset}&_reactions=true&_author=true&_comments=true`
+      `${API_BASE}/auction/listings?limit=${limit}&offset=${offset}&_reactions=true&_seller=true&_comments=true`,
     );
 
     if (!response.ok) {
@@ -21,7 +21,7 @@ export async function getListingsAndDisplay(limit = 100, offset = 0) {
 
     if (meta) {
       console.log(
-        `Total items: ${meta.totalCount}, Total pages: ${meta.pageCount}`
+        `Total items: ${meta.totalCount}, Total pages: ${meta.pageCount}`,
       );
       console.log(meta);
       // generatePagination(meta, limit, offset);
@@ -42,7 +42,7 @@ export async function getListingsAndDisplay(limit = 100, offset = 0) {
       cardDiv.classList.add("card");
 
       const cardBodyDiv = document.createElement("div");
-      cardBodyDiv.classList.add("card-body");
+      cardBodyDiv.classList.add("card-body", "m-2");
 
       const title = document.createElement("h5");
       title.classList.add("card-title");
@@ -72,6 +72,7 @@ export async function getListingsAndDisplay(limit = 100, offset = 0) {
       _count.classList.add("bid_count");
       _count.textContent = "Bids: " + item._count.bids;
       cardBodyDiv.appendChild(_count);
+      cardBodyDiv.classList.add("m-2");
       cardDiv.appendChild(cardBodyDiv);
 
       const updated = document.createElement("h5");

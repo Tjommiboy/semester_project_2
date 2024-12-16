@@ -8,7 +8,7 @@ export function displayMenu() {
     if (isLoggedIn()) {
       nav.innerHTML = `
         <div class="title-parent">
-          <a href="../index.html">
+          <a href="/">
             <h1 class="title">Gimmi</h1>
             <div class="subtitle">
               <span class="subtitle">Bid </span>
@@ -37,7 +37,7 @@ export function displayMenu() {
         <a href="/create/index.html" id="createButton" class="btn btn-primary me-2 mb-1">Create</a>
       </li>
         <li class="nav-item">
-          <button 
+          <button
             id="logOutButton"
             type="button"
             class="btn btn-primary me-2"

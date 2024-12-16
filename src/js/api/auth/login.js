@@ -38,7 +38,7 @@ export async function loginUser(user) {
     storage.save("profile", profile);
 
     // Redirect to the ./index.html page upon successful login
-    window.location.href = "../../../../index.html";
+    window.location.href = "/";
 
     return responseData.data;
   } catch (error) {

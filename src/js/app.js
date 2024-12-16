@@ -2,14 +2,15 @@ import { registerHandler } from "./events/auth/registerHandler.js";
 import { loginHandler } from "./events/auth/loginHandler.js";
 import { fetchSingleItem } from "./api/posts/read.js";
 import { getListingsAndDisplay } from "./api/auth/getListings.js";
-import { getProfile, populateProfile } from "./api/auth/profile.js";
+import { getProfile, populateProfile } from "./api/auth/profile/profile.js";
 import { displayMenu } from "./components/shared/displayMenu.js";
-
+import { CreateListingButton } from "./ui/post/create.js";
+import { loadAndDisplayUserListings } from "./api/auth/profile/userListings.js";
 const path = window.location.pathname;
 
 displayMenu();
 switch (path) {
-  case "/index.html":
+  case "/":
     console.log("home");
     getListingsAndDisplay();
     break;
@@ -28,6 +29,7 @@ switch (path) {
     console.log("profile");
     getProfile();
     populateProfile();
+    loadAndDisplayUserListings();
     break;
 
   case "/singleItem/index.html":
@@ -36,6 +38,11 @@ switch (path) {
     break;
   case "/create/index.html":
     console.log("create");
+    CreateListingButton();
+    break;
+  case "/edit/index.html":
+    console.log("edit");
+
     break;
 
   default:

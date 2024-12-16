@@ -1,7 +1,7 @@
-import { authFetch } from "../Utilities/authfetch.js";
-import { API_BASE, API_PROFILE } from "../Utilities/constants.js";
-import { showSpinner, hideSpinner } from "../../ui/spinner.js";
-import { loadProfile } from "../../storage/loadProfile.js";
+import { authFetch } from "../../Utilities/authfetch.js";
+import { API_PROFILE } from "../../Utilities/constants.js";
+import { showSpinner, hideSpinner } from "../../../ui/spinner.js";
+import { loadProfile } from "../../../storage/loadProfile.js";
 export async function getProfile() {
   try {
     showSpinner();
@@ -12,7 +12,7 @@ export async function getProfile() {
       throw new Error(`${missingField} not found in local storage`);
     }
 
-    const url = `${API_BASE}${API_PROFILE}/${profile.name}`;
+    const url = `${API_PROFILE}/${profile.name}`;
 
     const response = await authFetch(url, {
       method: "GET",
