@@ -9,6 +9,7 @@ import { loadAndDisplayUserListings } from "./api/auth/profile/userListings.js";
 const path = window.location.pathname;
 
 displayMenu();
+
 switch (path) {
   case "/":
     console.log("home");

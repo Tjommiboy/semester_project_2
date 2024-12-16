@@ -9,7 +9,8 @@
     "watch": "sass --watch src/scss:dist/css && npm run live-server",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "dev": "vite"
   },
   "keywords": [],
   "author": "",

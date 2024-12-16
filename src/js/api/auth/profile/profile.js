@@ -2,6 +2,10 @@ import { authFetch } from "../../Utilities/authfetch.js";
 import { API_PROFILE } from "../../Utilities/constants.js";
 import { showSpinner, hideSpinner } from "../../../ui/spinner.js";
 import { loadProfile } from "../../../storage/loadProfile.js";
+import { authGuard } from "../../../storage/authguard.js";
+
+authGuard();
+
 export async function getProfile() {
   try {
     showSpinner();
