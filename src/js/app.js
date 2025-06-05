@@ -6,6 +6,7 @@ import { getProfile, populateProfile } from "./api/auth/profile/profile.js";
 import { displayMenu } from "./components/shared/displayMenu.js";
 import { CreateListingButton } from "./ui/post/create.js";
 import { loadAndDisplayUserListings } from "./api/auth/profile/userListings.js";
+import "../scss/index.scss";
 const path = window.location.pathname;
 
 displayMenu();
