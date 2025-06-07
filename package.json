@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
     "build": "vite build",
-    "watch": "sass --watch src/scss:dist/css && npm run live-server",
+    "preview": "vite preview",
+    "sass": "sass src/scss/index.scss dist/css/index.css --watch",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
-    "prepare": "husky install",
-    "dev": "vite"
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
